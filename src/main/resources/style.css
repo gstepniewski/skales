@@ -1,0 +1,26 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+td {
+    white-space:pre
+}
+
+tr.notes {
+    font-weight: bolder;
+}
+
+tr.chords {
+    font-weight: bold;
+}
+
+tr.triads {
+    font-weight: normal;
+}
+
+tr.seventh {
+    font-weight: lighter;
+}
