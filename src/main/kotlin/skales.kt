@@ -20,7 +20,7 @@ class Skales: RComponent<SkalesProps, SkalesState>() {
     }
 
     override fun RBuilder.render() {
-        div("center") {
+        div("center selectors") {
             rootNoteSelector { note ->
                 setState { this.rootNote = note }
             }
@@ -28,7 +28,7 @@ class Skales: RComponent<SkalesProps, SkalesState>() {
                 setState { this.mode = mode }
             }
         }
-        div("center") {
+        div("center table") {
             scaleTable()
         }
     }
@@ -69,12 +69,6 @@ class Skales: RComponent<SkalesProps, SkalesState>() {
         val scale = Scale(state.rootNote, state.mode)
 
         table("center") {
-            tr("header") {
-                th {
-                    attrs.colSpan = "8"
-                    +"${Formatter.inContext(state.rootNote, scale)} ${state.mode.name}"
-                }
-            }
             tr("notes") {
                 td { +"Notes" }
                 scale.notes.forEach {

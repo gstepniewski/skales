@@ -4,8 +4,6 @@ enum class ScaleMode { Major, Dorian, Phrygian, Lydian, Mixolydian, Minor, Locri
 
 data class Scale(val rootNote: Note, val mode: ScaleMode) {
 
-    val relativeMajor = rootNote.minus(mode.ordinal)
-
     // TODO Use circular list here
     private val notesFormula: List<Note.() -> Note> = listOf (
         {wholeStep()}, {wholeStep()}, {halfStep()}, {wholeStep()}, {wholeStep()}, {wholeStep()}, {halfStep()},
@@ -25,4 +23,6 @@ data class Scale(val rootNote: Note, val mode: ScaleMode) {
 
     val chords = chordsFormula.drop(mode.ordinal).take(7)
                                          .zip(notes) { degree, note -> Triad(note, degree) }
+
+    val relativeMajor = notes.plus(rootNote).reversed()[mode.ordinal]
 }

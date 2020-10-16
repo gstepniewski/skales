@@ -1,3 +1,24 @@
+* {
+    margin:0;padding:0;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+div#root {
+    display: table;
+    table-layout: fixed;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+div.selectors, div.table {
+    display: table-row;
+}
+
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -5,22 +26,22 @@
     text-align: center;
 }
 
+.selectors {
+    font-size: xx-large;
+}
+
 td {
+    text-align: center;
+    vertical-align: center;
     white-space:pre
 }
 
 tr.notes {
+    font-size: x-large;
     font-weight: bolder;
 }
 
 tr.chords {
+    font-size: larger;
     font-weight: bold;
-}
-
-tr.triads {
-    font-weight: normal;
-}
-
-tr.seventh {
-    font-weight: lighter;
 }
