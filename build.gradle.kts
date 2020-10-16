@@ -40,3 +40,6 @@ kotlin {
         }
     }
 }
+
+// Heroku Deployment
+tasks.register("stage") { dependsOn("build") }
