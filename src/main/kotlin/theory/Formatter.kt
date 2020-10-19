@@ -51,12 +51,13 @@ object Formatter {
         Note.GA -> asFlat(note)
     }
 
-    fun inContext(triad: Triad, scale: Scale) = "${inContext(triad.root, scale)} ${triad.degree.name}"
+    fun inContext(triad: Triad, scale: Scale) = "${inContext(triad.root, scale)} ${triad.degree.display()}"
 
     fun inContextShort(triad: Triad, scale: Scale): String {
         val root = inContext(triad.root, scale)
         return when (triad.degree) {
             ChordDegree.Major -> root.toUpperCase()
+            ChordDegree.MajorDominant -> root.toUpperCase()
             ChordDegree.Minor -> root.toLowerCase()
             ChordDegree.Diminished -> "${root.toLowerCase()}$dim"
             ChordDegree.Augmented -> "${root.toUpperCase()}$aug"

@@ -16,9 +16,9 @@ data class Scale(val rootNote: Note, val mode: ScaleMode) {
 
     // TODO Use circular list here
     private val chordsFormula = listOf(
-        ChordDegree.Major, ChordDegree.Minor, ChordDegree.Minor, ChordDegree.Major, ChordDegree.Major, ChordDegree.Minor, ChordDegree.Diminished,
-        ChordDegree.Major, ChordDegree.Minor, ChordDegree.Minor, ChordDegree.Major, ChordDegree.Major, ChordDegree.Minor, ChordDegree.Diminished,
-        ChordDegree.Major, ChordDegree.Minor, ChordDegree.Minor, ChordDegree.Major, ChordDegree.Major, ChordDegree.Minor, ChordDegree.Diminished,
+        ChordDegree.Major, ChordDegree.Minor, ChordDegree.Minor, ChordDegree.Major, ChordDegree.MajorDominant, ChordDegree.Minor, ChordDegree.Diminished,
+        ChordDegree.Major, ChordDegree.Minor, ChordDegree.Minor, ChordDegree.Major, ChordDegree.MajorDominant, ChordDegree.Minor, ChordDegree.Diminished,
+        ChordDegree.Major, ChordDegree.Minor, ChordDegree.Minor, ChordDegree.Major, ChordDegree.MajorDominant, ChordDegree.Minor, ChordDegree.Diminished,
     )
 
     val chords = chordsFormula.drop(mode.ordinal).take(7)
