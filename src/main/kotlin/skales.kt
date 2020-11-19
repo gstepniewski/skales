@@ -70,13 +70,19 @@ class Skales: RComponent<SkalesProps, SkalesState>() {
 
         table("center") {
             tr("notes") {
-                td { +"Notes" }
+                td { +"Note" }
                 scale.notes.forEach {
                     td { +Formatter.inContext(it, scale) }
                 }
             }
+            tr("degrees") {
+                td{ +"Degree" }
+                scale.chords.forEachIndexed { index, _ ->
+                    td { +"${index + 1}" }
+                }
+            }
             tr("chords") {
-                td { +"Chords" }
+                td { +"Chord" }
                 scale.chords.forEach {
                     td { +Formatter.inContext(it, scale) }
                 }
